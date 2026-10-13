@@ -405,3 +405,44 @@ A separate goroutine periodically counts users without blocking HTTP request han
 ## License
 
 This project was created as a user management API coding assessment.
+
+
+## Docker
+
+Requirements:
+- Docker
+- Docker Compose
+
+Create a `.env` file in the project root with a valid `JWT_SECRET`.
+
+Start the API and MongoDB:
+
+```bash
+docker compose up --build -d
+```
+
+Check running containers:
+
+```bash
+docker compose ps
+```
+
+View API logs:
+
+```bash
+docker compose logs -f api
+```
+
+Health check:
+
+```text
+http://localhost:3000/health
+```
+
+Stop containers:
+
+```bash
+docker compose down
+```
+
+MongoDB data is persisted in the `mongodb_data` Docker volume.
